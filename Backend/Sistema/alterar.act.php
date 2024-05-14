@@ -17,5 +17,5 @@ $msg = "<p class=\"alerta red\">Erro ao gravar registro: " . $con->error . "</p>
 
 @session_start();
 $_SESSION['msg'] = $msg;
-header("location:funcionario.php");
+header("location:../../Frontend/Paginas/funcionario.php");
 ?>

@@ -1,6 +1,6 @@
 <?php  
  include('head.php');
- require('connect.php');
+ require('../../Backend/Sistema/connect.php');
 
 
  $estoque_id = mysqli_real_escape_string($con, $_GET['Estoque_id']);

@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         `Data_leitura`) VALUES (NULL, '$idTanque', '$ph', '$nivelOxigenio', 
         '$dataLeitura');");
 
-        header("Location: testeQuimico.php");
+        header("Location: ../../Frontend/Paginas/testeQuimico.php");
 
     } else {
         echo "Por favor, preencha todos os campos.";

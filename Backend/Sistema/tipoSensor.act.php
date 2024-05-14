@@ -14,8 +14,8 @@ if(!empty($nome)){
     VALUES (NULL, '$nome', '$caracteristica');");
 
 $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
-    header("location:tipoSensor.php"); 
+    header("location:../../Frontend/Paginas/tipoSensor.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:tipoSensor.php");
+    header("location:../../Frontend/Paginas/tipoSensor.php");
 }

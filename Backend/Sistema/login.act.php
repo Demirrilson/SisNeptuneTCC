@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (mysqli_num_rows($result) == 1) {    
             $_SESSION['idFuncionario'] = $idFuncionario;
-            header("Location: painelControle.php");
+            header("Location: ../../Frontend/Paginas/painelControle.php");
         } else {
             // Senha incorreta ou funcionário não encontrado
             echo "Senha incorreta ou funcionário não encontrado.";

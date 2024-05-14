@@ -14,8 +14,8 @@ if(!empty($nome)){
     '$localizacao', '$areaTotal');");
 
 $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
-    header("location:piscicultura.php"); 
+    header("location:../../Frontend/Paginas/piscicultura.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:piscicultura.php");
+    header("location:../../Frontend/Paginas/piscicultura.php");
 }

@@ -8,6 +8,7 @@ var_dump($_POST);
 require('connect.php');
 
 
+
 $sql = "SELECT Alimentacao_id, Nome FROM alimentacao";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -34,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         VALUES (NULL, '$idTanque', '$idProduto', '$dataAlimentacao', 
         '$horaAlimentacao', '$tipoAlimentacao', '$quantidadeAlimento');");
 
-        header("Location: alimentacao.php");
+        header("Location: ../../Frontend/Paginas/alimentacao.php");
 
     } else {
         echo "Por favor, preencha todos os campos.";

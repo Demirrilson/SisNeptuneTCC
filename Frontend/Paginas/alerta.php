@@ -5,7 +5,7 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
             <form action="alerta.act.php" method="post" enctype="multipart/form-data">

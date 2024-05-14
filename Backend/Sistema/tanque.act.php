@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         mysqli_query($con, "INSERT INTO `tanque` (`Tanque_id`, `Capacidade_volume`, `Piscicultura_id`) VALUES (NULL, '$capacidadeVolume', '$idPiscicultura')");
 
-        header("Location: tanque.php");
+        header("Location: ../../Frontend/Paginas/tanque.php");
 
     } else {
         echo "Por favor, preencha todos os campos.";

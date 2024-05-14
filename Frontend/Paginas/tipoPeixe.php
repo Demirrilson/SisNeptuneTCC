@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="tipoPeixe.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/tipoPeixe.act.php" method="post" enctype="multipart/form-data">
                 <label>Espécie:</label>
                 <input type="text" placeholder="Digite a espécie do peixe..." name="nome" required>
 

@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="notificacao.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/notificacao.act.php" method="post" enctype="multipart/form-data">
                 <label>Mensagem:</label>
                 <input type="text" placeholder="Digite o nome do produto..." name="mensagem" required>
 

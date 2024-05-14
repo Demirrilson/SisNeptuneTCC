@@ -1,10 +1,10 @@
 <?php  
  include('head.php');
  include('menuBar.php');
- require('connect.php');
+ require('../../Backend/Sistema/connect.php');
 ?>
 
- <script src="jQuery/code.jquery.com_jquery-3.7.0.min.js"></script>
+ <script src="../../Backend/jQuery/code.jquery.com_jquery-3.7.0.min.js"></script>
 
 
  <?php

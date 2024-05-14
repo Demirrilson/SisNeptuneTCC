@@ -1,6 +1,6 @@
 <?php 
     include('head.php');
-    require('connect.php');
+    require('../../Backend/Sistema/connect.php');
 
 ?>
 
@@ -9,7 +9,7 @@
 
 
         <div class="container">
-            <form action="produto.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/produto.act.php" method="post" enctype="multipart/form-data">
                 <label>Nome:</label>
                 <input type="text" placeholder="Digite o nome do produto..." name="nome" required>
 

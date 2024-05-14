@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="piscicultura.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/piscicultura.act.php" method="post" enctype="multipart/form-data">
                 <label>Nome:</label>
                 <input type="text" placeholder="Digite o nome do produto..." name="nome" required>
 

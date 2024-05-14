@@ -5,13 +5,13 @@ include('head.php');
 
 <html>
     <body>
-        <?php require ('connect.php');?>
+        <?php require ('../../Backend/Sistema/connect.php');?>
 
 
         <div class="caixa">
         <div class="containerLogin">
 
-        <form action="login.act.php" method="post" enctype="multipart/form-data">
+        <form action="../../Backend/Sistema/login.act.php" method="post" enctype="multipart/form-data">
                
             
                <div class="titleLogin">

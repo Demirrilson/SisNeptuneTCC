@@ -7,7 +7,7 @@ include('menuBar.php');
 <?php 
     include('head.php');
 
-    require('connect.php');
+    require('../../Backend/Sistema/connect.php');
 
     $funcionarios = mysqli_query($con, "SELECT * FROM `cadastro`");
 

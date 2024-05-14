@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         VALUES ('$idPeixe', '$quantidadePeixe', '$pesoUnitario', 
         '$pesoLote', '$dataEntradaLote','$dataSaidaLote');");
 
-        header("Location: qualificacaoPeixe.php");
+        header("Location: ../../Frontend/Paginas/qualificacaoPeixe.php");
 
     } else {
         echo "Por favor, preencha todos os campos.";

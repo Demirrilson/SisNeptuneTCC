@@ -13,8 +13,8 @@ if (!empty($nome)) {
     (NULL, '$nome\r\n');");
 
 $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
-    header("location:tipoPeixe.php"); 
+    header("location:../../Frontend/Paginas/tipoPeixe.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:tipoPeixe.php");
+    header("location:../../Frontend/Paginas/tipoPeixe.php");
 }

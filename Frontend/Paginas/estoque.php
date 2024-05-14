@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="estoque.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/estoque.act.php" method="post" enctype="multipart/form-data">
 
             
             

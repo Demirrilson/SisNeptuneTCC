@@ -1,6 +1,6 @@
 <?php  
  include('head.php');
- require('connect.php');
+ require('../../Backend/Sistema/connect.php');
 ?>
 
 <script src="jQuery/code.jquery.com_jquery-3.7.0.min.js"></script>

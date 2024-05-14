@@ -1,7 +1,7 @@
 <?php
 
 include('head.php');
-require('connect.php');
+require('../../Backend/Sistema/connect.php');
 
 $codigo = $_GET['Cadastro_id'];
 
@@ -12,7 +12,7 @@ $funcionario = mysqli_fetch_array($busca);
 ?>
 
 <div class="container">
-            <form action="alterar.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/alterar.act.php" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" name="codigo" value="<?php echo $funcionario['Cadastro_id']; ?>">
 

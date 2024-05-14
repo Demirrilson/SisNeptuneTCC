@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="relatorio.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/relatorio.act.php" method="post" enctype="multipart/form-data">
                 <label>Data relatório:</label>
                 <input type="date" name="dataRelatorio" required>
 

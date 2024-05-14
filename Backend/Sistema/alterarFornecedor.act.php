@@ -15,5 +15,5 @@ if(mysqli_query($con, $query)) {
 
     @session_start();
 $_SESSION['msg'] = $msg;
-header("location:detalheFornecedor.php");
+header("location:../../Frontend/Paginas/detalheFornecedor.php");
 ?>

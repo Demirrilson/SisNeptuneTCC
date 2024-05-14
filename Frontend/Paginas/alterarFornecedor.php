@@ -1,7 +1,7 @@
 <?php
 
 include('head.php');
-require('connect.php');
+require('../../Backend/Sistema/connect.php');
 
 $codigo = $_GET['Fornecedor_id'];
 
@@ -12,7 +12,7 @@ $fornecedor = mysqli_fetch_array($busca);
 ?>
 
 <div class="container">
-            <form action="alterarFornecedor.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/alterarFornecedor.act.php" method="post" enctype="multipart/form-data">
 
                 <input type="hidden" name="codigo" value="<?php echo $fornecedor['Fornecedor_id']; ?>">
 

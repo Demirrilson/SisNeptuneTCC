@@ -1,6 +1,6 @@
 <?php 
     include('head.php');
-    require('connect.php');
+    require('../../Backend/Sistema/connect.php');
 
     $fornecedores = mysqli_query($con, "SELECT * FROM `fornecedor`");
 

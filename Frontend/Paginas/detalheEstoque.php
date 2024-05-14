@@ -1,6 +1,6 @@
 <?php
     include('head.php');
-    require('connect.php');
+    require('../../Backend/Sistema/connect.php');
 
     $estoques = mysqli_query($con, "SELECT * FROM `estoque`");
 

@@ -3,7 +3,7 @@
 // Verifica se o ID do cadastro foi fornecido na URL
 if(isset($_GET['Fornecedor_id'])) {
     // Conecta ao banco de dados
-    include('connect.php');
+    include('../../Backend/Sistema/connect.php');
     
     // Obtém e escapa o ID do cadastro
     $Fornecedor_id = mysqli_real_escape_string($con, $_GET['Fornecedor_id']);

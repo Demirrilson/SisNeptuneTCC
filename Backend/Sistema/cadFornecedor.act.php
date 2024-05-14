@@ -18,5 +18,5 @@ $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
     header("location:cadFornecedor.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:cadFornecedor.php");
+    header("location:../../Frontend/Paginas/cadFornecedor.php");
 }

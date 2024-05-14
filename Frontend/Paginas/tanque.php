@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="tanque.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/tanque.act.php" method="post" enctype="multipart/form-data">
                 <label>Capacidade volume</label>
                 <input type="number" placeholder="Digite o volume do Tanque..." name="capacidadeVolume" required>
 

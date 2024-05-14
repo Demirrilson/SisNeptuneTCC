@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="qualificacaoPeixe.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/qualificacaoPeixe.act.php" method="post" enctype="multipart/form-data">
                 <label>Quantidade peixe:</label>
                 <input type="number" name="quantidadePeixe" required>
 

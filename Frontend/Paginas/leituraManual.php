@@ -5,10 +5,10 @@ include('head.php');
 
 <html>
     <body>
-        <?php include ('connect.php');?>
+        <?php include ('../../Backend/Sistema/connect.php');?>
 
         <div class="container">
-            <form action="leituraManual.act.php" method="post" enctype="multipart/form-data">
+            <form action="../../Backend/Sistema/leituraManual.act.php" method="post" enctype="multipart/form-data">
                 <label>Valor:</label>
                 <input type="number" placeholder="Digite o valor..." name="valor" required>
 
