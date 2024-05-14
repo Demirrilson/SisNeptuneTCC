@@ -1,0 +1,20 @@
+
+utilizando uma placa esp32 wroom
+utilizando a ide do arduino
+
+rede wifi
+SSID: Be2G
+senha: cenhahu3hu3
+
+Conectar ao banco de dados em mysql  database 'neptune'
+realizar a leitura de um sensor de temperarura ds18i20b
+fornecer informação de data e hora da leitura 
+fazer uma query para o banco de dados Leitura_sensor ( Data_litura, Valor,);
+atraves de uma api php 
+
+fornecer tambem o codigo em PHP
+e o passo a passo para implementação
+
+
+mandar essas informações para a serial
+piscar um led para informar a conexão wifi

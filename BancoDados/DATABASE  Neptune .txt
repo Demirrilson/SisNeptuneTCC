@@ -1,0 +1,205 @@
+CREATE DATABASE IF NOT EXISTS Neptune;
+USE Neptune;
+
+-- 1-Piscicultura
+CREATE TABLE Piscicultura (
+    Piscicultura_id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255),
+    Localizacao VARCHAR(255),
+    Area_total FLOAT
+);
+
+-- 2-Funcionario
+CREATE TABLE Funcionario (
+    Funcionario_id INT PRIMARY KEY AUTO_INCREMENT,
+    Cadastro_id INT,
+    Data_entrada DATE,
+    Hora_entrada TIME,
+    Hora_saida TIME,
+    FOREIGN KEY (Cadastro_id) REFERENCES Cadastro(Cadastro_id)
+);
+
+-- 3-Tanque
+CREATE TABLE Tanque (
+    Tanque_id INT PRIMARY KEY AUTO_INCREMENT,
+    Capacidade_volume FLOAT,
+    Piscicultura_id INT,
+    FOREIGN KEY (Piscicultura_id) REFERENCES Piscicultura(Piscicultura_id)
+);
+
+-- 4-Login
+CREATE TABLE Login (
+    Login_id INT PRIMARY KEY AUTO_INCREMENT,
+    Username VARCHAR(255),
+    Password VARCHAR(255),
+    Last_login DATETIME,
+    Funcionario_id INT,
+    FOREIGN KEY (Funcionario_id) REFERENCES Funcionario(Funcionario_id)
+);
+
+-- 5-Alimentacao
+CREATE TABLE Alimentacao (
+    Alimentacao_id INT PRIMARY KEY AUTO_INCREMENT,
+    Tanque_id INT,
+    Produto_id INT,
+    Data_alimentacao DATE,
+    FOREIGN KEY (Tanque_id) REFERENCES Tanque(Tanque_id),
+    FOREIGN KEY (Produto_id) REFERENCES Produtos(Produto_id)
+);
+
+-- 6-Registro_Alimentacao
+CREATE TABLE Registro_Alimentacao (
+    Registro_alimentacao_id INT PRIMARY KEY AUTO_INCREMENT,
+    Alimentacao_id INT,
+    Funcionario_id INT,
+    Status VARCHAR(255),
+    Hora TIME,
+    Quantidade INT,
+    FOREIGN KEY (Alimentacao_id) REFERENCES Alimentacao(Alimentacao_id),
+    FOREIGN KEY (Funcionario_id) REFERENCES Funcionario(Funcionario_id)
+);
+
+-- 7-Cadastro
+CREATE TABLE Cadastro (
+    Cadastro_id INT PRIMARY KEY AUTO_INCREMENT,
+    Data_demissao DATE,
+    Expediente VARCHAR(255),
+    Nome VARCHAR(255),
+    Email VARCHAR(255),
+    Telefone VARCHAR(20),
+    Cargo VARCHAR(255),
+    Endereco VARCHAR(255),
+    Data_contratacao DATE
+);
+
+-- 8-Fornecedor
+CREATE TABLE Fornecedor (
+    Fornecedor_id INT PRIMARY KEY AUTO_INCREMENT,
+    CNPJ_fornecedor VARCHAR(20),
+    Nome VARCHAR(255),
+    Email VARCHAR(255),
+    Telefone VARCHAR(20)
+);
+
+-- 9-Estoque
+CREATE TABLE Estoque (
+    Estoque_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Produto_id INT,
+    Fornecedor_id INT,
+    Localizacao_produto VARCHAR(255),
+    Data_validade DATE,
+    Quantidade INT,
+    Data_entrada DATE,
+    Data_saida DATE,
+    FOREIGN KEY (Produto_id) REFERENCES Produtos(Produto_id),
+    FOREIGN KEY (Fornecedor_id) REFERENCES Fornecedor(Fornecedor_id)
+);
+
+-- 10-Produtos
+CREATE TABLE Produtos (
+    Produto_id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255),
+    Fornecedor_id INT,
+    Produto VARCHAR(255),
+    Tipo VARCHAR(255),
+    FOREIGN KEY (Fornecedor_id) REFERENCES Fornecedor(Fornecedor_id)
+);
+
+-- 11-Valvula
+CREATE TABLE Valvula (
+    Valvula_id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255),
+    Status VARCHAR(255),
+    Tanque_id INT,
+    FOREIGN KEY (Tanque_id) REFERENCES Tanque(Tanque_id)
+);
+
+-- 12-Tipo sensor
+CREATE TABLE Tipo_Sensor (
+    Tipo_sensor_id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255),
+    Caracteristica VARCHAR(255)
+);
+
+-- 13-Sensor
+CREATE TABLE Sensor (
+    Sensor_id INT PRIMARY KEY AUTO_INCREMENT,
+    Tipo_sensor_id INT,
+    FOREIGN KEY (Tipo_sensor_id) REFERENCES Tipo_Sensor(Tipo_sensor_id)
+);
+
+-- 14-Leitura sensor
+CREATE TABLE Leitura_sensor (
+    Leitura_sensor_id INT PRIMARY KEY AUTO_INCREMENT,
+    Sensor_id INT,
+    Data_litura DATETIME,
+    Valor FLOAT,
+    FOREIGN KEY (Sensor_id) REFERENCES Sensor(Sensor_id)
+);
+
+-- 15- Teste Quimico
+CREATE TABLE Teste_Quimico (
+    Teste_id INT PRIMARY KEY AUTO_INCREMENT,
+    Tanque_id INT,
+    FOREIGN KEY (Tanque_id) REFERENCES Tanque(Tanque_id)
+);
+
+-- 16- Leitura_manual
+CREATE TABLE Leitura_manual (
+    Leitura_id INT PRIMARY KEY AUTO_INCREMENT,
+    Teste_id INT,
+    Data_leitura DATETIME,
+    Tipo_teste_quimico VARCHAR(255),
+    Valor FLOAT,
+    FOREIGN KEY (Teste_id) REFERENCES Teste_Quimico(Teste_id)
+);
+
+-- 17-Relatorio
+CREATE TABLE Relatorio (
+    Relatorio_id INT PRIMARY KEY AUTO_INCREMENT,
+    Data_relatorio DATE,
+    Conteudo TEXT,
+    Leitura_id INT,
+    Leitura_sensor_id INT,
+    Valvula_id INT,
+    Tanque_id INT,
+    FOREIGN KEY (Leitura_id) REFERENCES Leitura_manual(Leitura_id),
+    FOREIGN KEY (Leitura_sensor_id) REFERENCES Leitura_sensor(Leitura_sensor_id),
+    FOREIGN KEY (Valvula_id) REFERENCES Valvula(Valvula_id),
+    FOREIGN KEY (Tanque_id) REFERENCES Tanque(Tanque_id)
+);
+
+-- 18-Notificacao
+CREATE TABLE Notificacao (
+    Notificacao_id INT PRIMARY KEY AUTO_INCREMENT,
+    Mensagem TEXT,
+    Data_envio DATETIME
+);
+
+-- 19-Alerta
+CREATE TABLE Alerta (
+    Alerta_id INT PRIMARY KEY AUTO_INCREMENT,
+    Tipo VARCHAR(255),
+    Mensagem TEXT,
+    Data_alerta DATETIME
+);
+
+-- 20-Tipo peixe
+CREATE TABLE Tipo_peixe (
+    Peixe_id INT PRIMARY KEY AUTO_INCREMENT,
+    Tanque_id INT,
+    Especie VARCHAR(255),
+    FOREIGN KEY (Tanque_id) REFERENCES Tanque(Tanque_id)
+);
+
+-- 21-Qualificacao peixe
+CREATE TABLE Qualificacao_Peixe (
+    Lote_id INT PRIMARY KEY AUTO_INCREMENT,
+    Peixe_id INT,
+    Quantidade_peixe INT,
+    Peso_lote FLOAT,
+    Peso_unitario FLOAT,
+    Data_entrada_lote DATE,
+    Data_saida_lote DATE,
+    FOREIGN KEY (Peixe_id) REFERENCES Tipo_peixe(Peixe_id)
+);
