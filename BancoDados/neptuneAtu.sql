@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 10-Maio-2024 às 15:55
+-- Tempo de geração: 14-Maio-2024 às 02:53
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -235,10 +235,35 @@ CREATE TABLE IF NOT EXISTS `leitura_sensor` (
   `Leitura_sensor_id` int NOT NULL AUTO_INCREMENT,
   `Sensor_id` int DEFAULT NULL,
   `Valor` decimal(10,2) DEFAULT NULL,
-  `Data_leitura` date DEFAULT NULL,
+  `Data_leitura` datetime DEFAULT NULL,
   PRIMARY KEY (`Leitura_sensor_id`),
   KEY `Sensor_id` (`Sensor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `leitura_sensor`
+--
+
+INSERT INTO `leitura_sensor` (`Leitura_sensor_id`, `Sensor_id`, `Valor`, `Data_leitura`) VALUES
+(21, NULL, '28.62', '2024-05-13 00:00:00'),
+(22, NULL, '28.62', '2024-05-13 00:00:00'),
+(23, NULL, '28.56', '2024-05-13 00:00:00'),
+(24, NULL, '28.62', '2024-05-13 00:00:00'),
+(25, NULL, '28.62', '2024-05-13 00:00:00'),
+(26, NULL, '28.62', '2024-05-13 00:00:00'),
+(27, NULL, '28.62', '2024-05-13 00:00:00'),
+(28, NULL, '28.62', '2024-05-13 00:00:00'),
+(29, NULL, '28.56', '2024-05-13 00:00:00'),
+(30, NULL, '28.62', '2024-05-13 00:00:00'),
+(31, NULL, '28.62', '2024-05-13 00:00:00'),
+(32, NULL, '28.69', '2024-05-13 00:00:00'),
+(33, NULL, '28.62', '2024-05-13 00:00:00'),
+(34, NULL, '28.62', '2024-05-13 23:52:36'),
+(35, NULL, '28.69', '2024-05-13 23:52:47'),
+(36, NULL, '28.62', '2024-05-13 23:52:57'),
+(37, NULL, '28.69', '2024-05-13 23:53:08'),
+(38, NULL, '28.62', '2024-05-13 23:53:19'),
+(39, NULL, '28.62', '2024-05-13 23:53:29');
 
 -- --------------------------------------------------------
 
@@ -374,6 +399,25 @@ INSERT INTO `qualificacao_peixe` (`Peixe_id`, `Quantidade_peixe`, `Peso_unitario
 (12, 3, '3.00', '3.00', '0000-00-00', '0000-00-00'),
 (12, 3, '3.00', '3.00', '2024-04-03', '0000-00-00'),
 (12, 4, '3.00', '3.00', '2024-04-03', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `registro_alimentacao`
+--
+
+DROP TABLE IF EXISTS `registro_alimentacao`;
+CREATE TABLE IF NOT EXISTS `registro_alimentacao` (
+  `Registro_alimentacao_id` int NOT NULL AUTO_INCREMENT,
+  `Alimentacao_id` int DEFAULT NULL,
+  `Funcionario_id` int DEFAULT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  `Hora` time DEFAULT NULL,
+  `Quantidade` int DEFAULT NULL,
+  PRIMARY KEY (`Registro_alimentacao_id`),
+  KEY `Alimentacao_id` (`Alimentacao_id`),
+  KEY `Funcionario_id` (`Funcionario_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 

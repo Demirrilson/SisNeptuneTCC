@@ -13,13 +13,13 @@ if ($conn->connect_error) {
 }
 
 // Receber os dados do ESP32
-$data_litura = $_POST["data_litura"];
+$data_litura = $_POST["data_leitura"];
 $valor = $_POST["valor"];
 
 var_dump($_POST);
 
 // Preparar e executar a query SQL
-$stmt = $conn->prepare("INSERT INTO leitura_sensor (Data_litura, Valor) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO leitura_sensor (Data_leitura, Valor) VALUES (?, ?)");
 $stmt->bind_param("ss", $data_litura, $valor);
 if ($stmt->execute()) {
     echo "Dados inseridos com sucesso";
