@@ -5,7 +5,10 @@
 #include <Wire.h>
 #include <hd44780.h>
 #include <hd44780ioClass/hd44780_I2Cexp.h>
-#include <TimeLib.h> // Incluindo a biblioteca TimeLib
+#include <EEPROM.h>
+#include <GravityTDS.h>
+#include "time.h"
+#include "sys/time.h"
 
 // Dados do WiFi
 const char* ssid = "Be2G";
@@ -22,12 +25,16 @@ const int ECHO_PIN = 25;
 
 // Configurações do Sensor TDS Meter
 const int TDS_PIN = 27;
+GravityTDS gravityTds;
 
 // Dados da API PHP
 const char* api_url = "http://192.168.1.21/Neptune/SisNeptuneTCC/Backend/API/api.php";
 
 // LCD
-hd44780_I2Cexp lcd; // Instanciação do objeto lcd
+hd44780_I2Cexp lcd;
+
+// Define o fuso horário para São Paulo
+const char* timezone = "BRT-3BRST,M10.3.0/0,M2.3.0/0";
 
 void setup() {
     Serial.begin(115200);
@@ -36,19 +43,21 @@ void setup() {
     pinMode(ECHO_PIN, INPUT);
     pinMode(TDS_PIN, INPUT);
 
-    connectWiFi();
-
-    // Inicialização do LCD
+    // Inicializa o LCD
     lcd.begin(16, 2);
 
-    // Configuração da TimeLib
-    configTime(0, 0, "pool.ntp.org");
+    connectWiFi();
+
+    // Configura o fuso horário
+    configTime(-3 * 3600, 0, "pool.ntp.org", "time.nist.gov");
+    setenv("TZ", timezone, 1); // Define a variável de ambiente TZ
+    tzset(); // Atualiza o fuso horário
 }
 
 void loop() {
     float temperature = getTemperature();
     float distance = getDistance();
-    float tdsValue = getTDS();
+    float tdsValue = getTdsValue();
 
     sendDataToAPI(1, temperature);
     sendDataToAPI(2, distance);
@@ -56,7 +65,7 @@ void loop() {
 
     displayStatus();
 
-    delay(10 * 1000); // Aguardar 5 minutos para a próxima leitura
+    delay(10 * 1000); // Aguarda 5 minutos para a próxima leitura
 }
 
 void connectWiFi() {
@@ -82,12 +91,12 @@ float getDistance() {
     delayMicroseconds(10);
     digitalWrite(TRIG_PIN, LOW);
     duration = pulseIn(ECHO_PIN, HIGH);
-    distance = duration * 0.01715;
+    distance = duration * 0.034 / 2;
     return distance;
 }
 
-float getTDS() {
-    return analogRead(TDS_PIN);
+float getTdsValue() {
+    return gravityTds.getTdsValue();
 }
 
 void sendDataToAPI(int sensor_id, float value) {
@@ -136,12 +145,12 @@ void displayStatus() {
 }
 
 String getTimeString() {
-    time_t now = time(nullptr);
     struct tm timeinfo;
-    localtime_r(&now, &timeinfo);
-
+    if (!getLocalTime(&timeinfo)) {
+        Serial.println("Falha ao obter a hora");
+        return "0000-00-00 00:00:00";
+    }
     char timeString[25];
     strftime(timeString, sizeof(timeString), "%Y-%m-%d %H:%M:%S", &timeinfo);
     return String(timeString);
 }
-
