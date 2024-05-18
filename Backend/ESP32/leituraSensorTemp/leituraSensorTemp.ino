@@ -34,7 +34,7 @@ const char* api_url = "http://192.168.1.21/Neptune/SisNeptuneTCC/Backend/API/api
 hd44780_I2Cexp lcd;
 
 // Define o fuso horário para São Paulo
-const char* timezone = "BRT-3BRST,M10.3.0/0,M2.3.0/0";
+const char* timezone = "BRT3BRST,M10.3.0/0,M2.3.0/0";
 
 void setup() {
     Serial.begin(115200);
