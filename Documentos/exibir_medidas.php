@@ -11,14 +11,14 @@ if (isset($_GET['dataInicio']) && isset($_GET['dataFim'])) {
     echo "<p>Data de Início: $dataInicio</p>";
     echo "<p>Data de Fim: $dataFim</p>";
 
-    // Exemplo de uso da função obterMedidasTemperatura
-    // include 'obter_medidas.php'; // Inclua o arquivo com a função obterMedidasTemperatura
-    // $medidas = obterMedidasTemperatura($dataInicio, $dataFim);
+    //Exemplo de uso da função obterMedidasTemperatura
+    include 'obter_medidas.php'; // Inclua o arquivo com a função obterMedidasTemperatura
+    $medidas = obterMedidasTemperatura($dataInicio, $dataFim);
 
     // Exibir as medidas de temperatura
-    // echo "Média: " . $medidas['media'] . "<br>";
-    // echo "Máxima: " . $medidas['maxima'] . "<br>";
-    // echo "Mínima: " . $medidas['minima'] . "<br>";
+    echo "Média: " . $medidas['media'] . "<br>";
+    echo "Máxima: " . $medidas['maxima'] . "<br>";
+    echo "Mínima: " . $medidas['minima'] . "<br>";
 } else {
     echo "Por favor, forneça a data de início e a data de fim.";
 }

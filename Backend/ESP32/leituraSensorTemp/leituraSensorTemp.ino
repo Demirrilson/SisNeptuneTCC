@@ -9,6 +9,7 @@
 #include <GravityTDS.h>
 #include "time.h"
 #include "sys/time.h"
+#include "Ultrasonic.h"
 
 // Dados do WiFi
 const char* ssid = "Be2G";
@@ -22,6 +23,8 @@ DallasTemperature sensors(&oneWire);
 // Configurações do Sensor Ultrassônico
 const int TRIG_PIN = 26;
 const int ECHO_PIN = 25;
+
+//Ultrasonic ultrasonic(TRIG_PIN, ECHO_PIN);
 
 // Configurações do Sensor TDS Meter
 const int TDS_PIN = 27;
@@ -39,8 +42,8 @@ const char* timezone = "BRT3BRST,M10.3.0/0,M2.3.0/0";
 void setup() {
     Serial.begin(115200);
     sensors.begin();
-    pinMode(TRIG_PIN, OUTPUT);
-    pinMode(ECHO_PIN, INPUT);
+    //pinMode(TRIG_PIN, OUTPUT);
+    //pinMode(ECHO_PIN, INPUT);
     pinMode(TDS_PIN, INPUT);
 
     // Inicializa o LCD
@@ -64,8 +67,9 @@ void loop() {
     sendDataToAPI(3, tdsValue);
 
     displayStatus();
+    Serial.println(distance);
 
-    delay(10 * 1000); // Aguarda 5 minutos para a próxima leitura
+    delay(50 * 1000); // Aguarda 5 minutos para a próxima leitura
 }
 
 void connectWiFi() {
@@ -92,6 +96,9 @@ float getDistance() {
     digitalWrite(TRIG_PIN, LOW);
     duration = pulseIn(ECHO_PIN, HIGH);
     distance = duration * 0.034 / 2;
+    //long distance = ultrasonic.read();
+    
+
     return distance;
 }
 

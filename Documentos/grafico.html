@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Temperatura</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Gráfico de Temperatura</h1>
+    <div style="width:75%;">
+        <canvas id="chart"></canvas>
+    </div>
+    <div id="ultimaLeitura"></div>
+    <script>
+        // Código JavaScript para criar o gráfico e exibir a última leitura do sensor
+        $(document).ready(function() {
+
+           
+            // Dados do gráfico
+            var ctx = document.getElementById('chart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [], // Adicione as datas aqui
+                    datasets: [{
+                        label: 'Temperatura',
+                        data: [], // Adicione os valores da temperatura aqui
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Exibir a última leitura do sensor
+            $.get('ultima_leitura.php', function(response) {
+                $('#ultimaLeitura').html('<p>Última Leitura: ' + response + '</p>');
+            });
+        });
+    </script>
+</body>
+</html>
