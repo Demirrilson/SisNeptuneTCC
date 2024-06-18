@@ -1,0 +1,24 @@
+.container-avisos{
+    width: 100%;
+    height: 92.5vh;
+    background-color: orange;
+
+}
+
+
+.titulo-aviso{
+    grid-area: titulo;
+    background-color: green;
+    
+}
+
+.filtros-aviso{
+    grid-area: filtro;
+    background-color: blue;
+}
+
+.content-aviso{
+    grid-area: conteudo;
+    background-color: red;
+    overflow: auto;
+}

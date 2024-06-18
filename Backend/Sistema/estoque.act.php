@@ -3,7 +3,6 @@
 
 
 extract($_POST);
-var_dump($_POST);
 
 require('connect.php');
 
@@ -12,6 +11,8 @@ $sql = "SELECT Estoque_id, Nome FROM estoque";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['dataValidade']) && !empty($_POST['quantidade'])) {
+        $dataValidade = $_POST['idProduto'];
+
         $dataValidade = $_POST['dataValidade'];
 
         $quantidade = $_POST['quantidade'];
@@ -19,6 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dataEntrada = $_POST['dataEntrada'];
 
         $dataSaida = $_POST['dataSaida'];
+
+        $dataSaida = $_POST['idFornecedor'];
 
 
         mysqli_query($con, "INSERT INTO `estoque` 
@@ -28,7 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         VALUES (NULL, $idProduto, $idFornecedor, NULL, 
         '$dataEntrada', '$quantidade', '$dataEntrada', '$dataSaida');");
 
-        // header("Location: login.php");
+
+
+    header("Location: ../../Frontend/Paginas/main-estoque.php");
 
     } else {
         echo "Por favor, preencha todos os campos.";

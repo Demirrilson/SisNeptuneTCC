@@ -1,0 +1,15 @@
+.grid-add-tipoPeixe{
+    grid-template-areas: 
+    'especie'
+    'btnCad'
+    ;
+}
+
+.grid-add-tipoPeixe p:nth-child(1) {
+    grid-area: especie;
+}
+
+.grid-add-tipoPeixe p:nth-child(2) {
+    grid-area: btnCad;
+    justify-self: center;
+}

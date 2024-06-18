@@ -1,0 +1,31 @@
+.grid-add-estoque{
+    grid-template-areas: 
+    'produto dataVal'
+    'quantidade dataEntrada'
+    'dataSaida fornecedor'
+    'btnCad btnCad'
+    ;
+}
+
+.grid-add-estoque p:nth-child(1) {
+    grid-area: produto;
+}
+.grid-add-estoque p:nth-child(2) {
+    grid-area: dataVal;
+}
+.grid-add-estoque p:nth-child(3) {
+    grid-area: quantidade;
+}   
+.grid-add-estoque p:nth-child(4) {
+    grid-area: dataEntrada;
+}
+.grid-add-estoque p:nth-child(5) {
+    grid-area: dataSaida;
+}
+.grid-add-estoque p:nth-child(6) {
+    grid-area: fornecedor;
+}
+.grid-add-estoque p:nth-child(7) {
+    grid-area: btnCad;
+    justify-self: center;
+}

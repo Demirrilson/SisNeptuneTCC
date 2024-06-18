@@ -14,8 +14,8 @@ if(!empty($mensagem)){
     VALUES (NULL, '$mensagem', '$dataEnviou');");
 
 $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
-    header("location:../../Frontend/Paginas/notificacao.php"); 
+    header("location:../../Frontend/Paginas/main-notificacao.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:../../Frontend/Paginas/notificacao.php");
+    header("location:../../Frontend/Paginas/add-notificacao.php");
 }

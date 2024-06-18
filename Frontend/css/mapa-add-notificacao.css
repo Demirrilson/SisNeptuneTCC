@@ -1,0 +1,19 @@
+.grid-add-notificacao{
+    grid-template-areas: 
+    'mensagem'
+    'data'
+    'btnCad'
+    ;
+}
+
+.grid-add-notificacao p:nth-child(1) {
+    grid-area: mensagem;
+}
+.grid-add-notificacao p:nth-child(2) {
+    grid-area: data;
+}
+
+.grid-add-notificacao p:nth-child(3) {
+    grid-area: btnCad;
+    justify-self: center;
+}

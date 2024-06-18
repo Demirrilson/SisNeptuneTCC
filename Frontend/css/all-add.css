@@ -1,0 +1,111 @@
+.btn-cadastrar {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: #022043;
+    border: 1px solid #022c5c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.btn-back{
+    margin-bottom: 15px;
+}
+
+.btn-back a i{
+    height: 20px;
+    width: 20px;
+    color: white;
+    transition: 0.3s;
+    font-size: 22px;
+}
+
+.btn-back a i:hover{
+    scale: 1.2;
+}
+
+.btn-cadastrar a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.btn-cadastrar:hover {
+    background-color: #022c5c;
+}
+
+.caixa-add{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+.add-content{
+    background-color: #022043;
+    padding: 20px;
+    width: 70%;
+    border-radius: 21px;
+}
+
+.add-content .btn-back{
+    margin-bottom: 20px;
+}
+
+.add-content p{
+    color: white;
+}
+
+.add-content p input{
+    border: none;
+}
+
+.form-add{
+    display: grid;
+    width: 100%;
+    gap: 25px;
+
+}
+
+.form-add p{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-add p input{
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 20px;
+    padding: 5px;
+    outline: none;
+}
+
+.form-add p select{
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 20px;
+    outline: none;
+}
+
+.form-add input[type='submit']{
+    background-color: white;
+    width: 150px;
+    font-size: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.form-add input[type='submit']:hover{
+    background-color: rgb(214, 205, 205);
+}

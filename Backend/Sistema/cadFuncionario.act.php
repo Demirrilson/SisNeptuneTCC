@@ -18,9 +18,9 @@ mysqli_query($con, "INSERT INTO `cadastro` (`Cadastro_id`, `Nome`, `Email`, `Tel
  '$dataContratacao', NULL, '$expediente', '$senha');");
 
 $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
-    header("location:../../Frontend/Paginas/funcionario.php"); 
+    header("location:../../Frontend/Paginas/main-funcionario.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:../../Frontend/Paginas/funcionario.php");
+    header("location:../../Frontend/Paginas/add-funcionario.php");
 }
 

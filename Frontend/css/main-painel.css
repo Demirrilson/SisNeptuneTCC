@@ -1,0 +1,85 @@
+.container-painel {
+    width: 100%;
+    height: 92.4vh;
+    background-color: rgb(231, 231, 228);
+    display: grid;
+    grid-template-areas:
+        'icon icon icon'
+        'parametro parametro parametro'
+        'parametro parametro parametro'
+        'parametro parametro parametro'
+        'parametro parametro parametro'
+    ;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 70px;
+}
+
+
+.painel-icons {
+    grid-area: icon;
+    width: 80vw;
+    background-color: white;
+    border: 0.5px solid rgb(223, 240, 252);
+    box-shadow: 1px 3px 15px 5px rgba(156, 149, 149, 0.75);
+    -webkit-box-shadow: 1px 3px 15px 5px rgba(156, 149, 149, 0.75);
+    -moz-box-shadow: 1px 3px 15px 5px rgba(156, 149, 149, 0.75);
+    border-radius: 20px;
+    display: flex;
+    gap: 130px;
+    justify-content: center;
+    align-items: center;
+}
+
+.painel-icons div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+}
+
+.painel-icons div a{
+    color: black;
+    transition: 0.3s;
+}
+
+.painel-icons div a:hover{
+    scale: 1.1;
+
+}
+
+.painel-parametros {
+    grid-area: parametro;
+    background-color: white;
+    border: 0.5px solid rgb(192, 191, 191);
+    box-shadow: 1px 3px 15px 5px rgba(156, 149, 149, 0.75);
+    -webkit-box-shadow: 1px 3px 15px 5px rgba(156, 149, 149, 0.75);
+    -moz-box-shadow: 1px 3px 15px 5px rgba(156, 149, 149, 0.75);
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    height: 90%;
+    width: 80vw;
+    align-items: start;
+    padding: 50px 30px;
+}
+
+.painel-parametros div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 30px;
+    width: 100%;
+}
+
+
+
+.painel-parametros div img{
+    width: 100%;
+}

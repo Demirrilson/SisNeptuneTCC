@@ -1,0 +1,27 @@
+.grid-add-dados{
+    grid-template-areas: 
+    'dataIni'
+    'dataFin'
+    'tipo'
+    'tanque'
+    'btnCad'
+    
+    ;
+}
+
+.grid-add-dados p:nth-child(1) {
+    grid-area: dataIni;
+}
+.grid-add-dados p:nth-child(2) {
+    grid-area: dataFin;
+}
+.grid-add-dados p:nth-child(3) {
+    grid-area: tipo;
+}
+.grid-add-dados p:nth-child(4) {
+    grid-area: tanque;
+}
+.grid-add-dados p:nth-child(5) {
+    grid-area: btnCad;
+    justify-self: center;
+}

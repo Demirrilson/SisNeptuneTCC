@@ -1,0 +1,29 @@
+.grid-add-testeQuimico{
+    grid-template-areas: 
+    'tipo horario'
+    'data resultado'
+    'tanque tanque'
+    'btnCad btnCad'
+    ;
+}
+
+.grid-add-testeQuimico p:nth-child(1) {
+    grid-area: tipo;
+}
+.grid-add-testeQuimico p:nth-child(2) {
+    grid-area: horario;
+}
+.grid-add-testeQuimico p:nth-child(3) {
+    grid-area: data;
+}   
+.grid-add-testeQuimico p:nth-child(4) {
+    grid-area: resultado;
+}
+.grid-add-testeQuimico p:nth-child(5) {
+    grid-area: tanque;
+}
+
+.grid-add-testeQuimico p:nth-child(6) {
+    grid-area: btnCad;
+    justify-self: center;
+}

@@ -1,0 +1,18 @@
+.grid-add-tipoSensor{
+    grid-template-areas: 
+    'nome'
+    'caracteristica'
+    'btnCad'
+    ;
+}
+
+.grid-add-tipoSensor p:nth-child(1) {
+    grid-area: nome;
+}
+.grid-add-tipoSensor p:nth-child(2) {
+    grid-area: caracteristica;
+}
+.grid-add-tipoSensor p:nth-child(3) {
+    grid-area: btnCad;
+    justify-self: center;
+}

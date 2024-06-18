@@ -1,0 +1,53 @@
+.container-faq{
+    display: grid;
+    grid-template-areas: 
+    'menuBar titulo titulo titulo titulo'
+    'menuBar contentFaq contentFaq contentFaq contentFaq'
+    'menuBar contentFaq contentFaq contentFaq contentFaq'
+    'menuBar contentFaq contentFaq contentFaq contentFaq'
+    ;
+    height: 92.5vh;
+}
+
+
+.container-faq div:nth-child(1){
+    grid-area: menuBar;
+    background-color: #022043;
+
+}
+.container-faq div:nth-child(2){
+    grid-area: titulo;
+    background-color: blue;
+}
+.container-faq div:nth-child(3){
+    grid-area: contentFaq;
+    background-color: green;
+}
+
+.menu-faq{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+    border: 1px solid black;
+    color: white;
+    font-size: 22px;
+}
+
+.menu-faq ul li{
+    cursor: pointer;
+}
+
+.titulo-faq{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 10px 10px 100px;
+    font-size: 32px;
+}
+
+.clicado{
+    border-bottom: 1px solid white;
+}

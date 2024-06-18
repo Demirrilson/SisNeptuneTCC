@@ -1,0 +1,29 @@
+.grid-add-produto{
+    grid-template-areas: 
+    'nome preco'
+    'data tipo'
+    'fornecedor fornecedor'
+    'btnCad btnCad'
+    ;
+}
+
+.grid-add-produto p:nth-child(1) {
+    grid-area: nome;
+}
+.grid-add-produto p:nth-child(2) {
+    grid-area: preco;
+}
+.grid-add-produto p:nth-child(3) {
+    grid-area: data;
+}   
+.grid-add-produto p:nth-child(4) {
+    grid-area: tipo;
+}
+.grid-add-produto p:nth-child(5) {
+    grid-area: fornecedor;
+}
+
+.grid-add-produto p:nth-child(6) {
+    grid-area: btnCad;
+    justify-self: center;
+}

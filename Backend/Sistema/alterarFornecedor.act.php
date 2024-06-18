@@ -1,9 +1,9 @@
 <?php
-    require('connect.php');
+    require('../../Backend/Sistema/connect.php');
     extract($_POST);
     var_dump($_POST);
 
-    $query = "UPDATE `fornecedor` SET `Nome` = '$nome', 
+    $query = "UPDATE `fornecedor` SET `CNPJ_Fornecedor` = '$cnpj', `Nome` = '$nome', 
     `Email` = '$email', `Telefone` = '$telefone' WHERE 
     `fornecedor`.`Fornecedor_id` = $codigo;";
 
@@ -15,5 +15,5 @@ if(mysqli_query($con, $query)) {
 
     @session_start();
 $_SESSION['msg'] = $msg;
-header("location:../../Frontend/Paginas/detalheFornecedor.php");
+header("location:../../Frontend/Paginas/main-fornecedor.php");
 ?>

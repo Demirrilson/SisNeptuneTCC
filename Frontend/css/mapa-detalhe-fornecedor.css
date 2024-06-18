@@ -1,0 +1,54 @@
+.grid-detalhe-funcionario{
+    grid-template-areas: 
+    'nome nome '
+    'email email'
+    'telefone  cargo'
+    'cep rua'
+    'bairro  numero'
+    'complemento complemento '
+    'data expediente'
+    'bts-card bts-card'
+    ;
+}
+
+.grid-detalhe-funcionario p:nth-child(1){
+    grid-area: nome;
+}
+.grid-detalhe-funcionario p:nth-child(2){
+    display: none;
+}
+.grid-detalhe-funcionario p:nth-child(3){
+    grid-area: email;
+}
+.grid-detalhe-funcionario p:nth-child(4){
+    grid-area: telefone;
+}
+.grid-detalhe-funcionario p:nth-child(5){
+    grid-area: cargo;
+}
+.grid-detalhe-funcionario p:nth-child(6){
+    grid-area: cep;
+}
+.grid-detalhe-funcionario p:nth-child(7){
+    grid-area: rua;
+}
+.grid-detalhe-funcionario p:nth-child(8){
+    grid-area: bairro;
+}
+.grid-detalhe-funcionario p:nth-child(9){
+    grid-area: numero;
+}
+.grid-detalhe-funcionario p:nth-child(10){
+    grid-area: complemento;
+}
+.grid-detalhe-funcionario p:nth-child(11){
+    grid-area: data;
+}
+.grid-detalhe-funcionario p:nth-child(12){
+    grid-area: expediente;
+}
+
+.grid-detalhe-funcionario .bts-card-infoFunc{
+    grid-area: bts-card;
+    justify-self: end;
+}

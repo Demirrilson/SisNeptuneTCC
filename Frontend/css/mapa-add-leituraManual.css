@@ -1,0 +1,27 @@
+.grid-add-leituraManual{
+    grid-template-areas: 
+    'valor'
+    'data'
+    'ph'
+    'nivelOxi'
+    'btnCad'
+    ;
+}
+
+.grid-add-leituraManual p:nth-child(1) {
+    grid-area: valor;
+}
+.grid-add-leituraManual p:nth-child(2) {
+    grid-area: data;
+}
+.grid-add-leituraManual p:nth-child(3) {
+    grid-area: ph;
+}   
+.grid-add-leituraManual p:nth-child(4) {
+    grid-area: nivelOxi;
+}
+
+.grid-add-leituraManual p:nth-child(5) {
+    grid-area: btnCad;
+    justify-self: center;
+}

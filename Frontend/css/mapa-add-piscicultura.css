@@ -1,0 +1,23 @@
+.grid-add-piscicultura{
+    grid-template-areas: 
+    'nome'
+    'localizacao'
+    'area'
+    'btnCad'
+    ;
+}
+
+.grid-add-piscicultura p:nth-child(1) {
+    grid-area: nome;
+}
+.grid-add-piscicultura p:nth-child(2) {
+    grid-area: localizacao;
+}
+.grid-add-piscicultura p:nth-child(3) {
+    grid-area: area;
+}   
+
+.grid-add-piscicultura p:nth-child(4) {
+    grid-area: btnCad;
+    justify-self: center;
+}

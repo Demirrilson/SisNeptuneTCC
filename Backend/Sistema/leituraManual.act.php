@@ -14,8 +14,8 @@ if(!empty($valor)){
     '$dataLeitura', '$ph', '$oxigenio');");
 
 $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
-    header("location:../../Frontend/Paginas/leituraManual.php"); 
+    header("location:../../Frontend/Paginas/main-leituraManual.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:../../Frontend/Paginas/leituraManual.php");
+    header("location:../../Frontend/Paginas/add-leituraManual.php");
 }

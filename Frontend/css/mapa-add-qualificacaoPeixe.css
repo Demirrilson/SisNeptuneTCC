@@ -1,0 +1,31 @@
+.grid-add-qualificacaoPeixe{
+    grid-template-areas: 
+    'quantidade pesoUni'
+    'pesoLote dataEntrada'
+    'dataSaida peixe'
+    'btnCad btnCad'
+    ;
+}
+
+.grid-add-qualificacaoPeixe p:nth-child(1) {
+    grid-area: quantidade;
+}
+.grid-add-qualificacaoPeixe p:nth-child(2) {
+    grid-area: pesoUni;
+}
+.grid-add-qualificacaoPeixe p:nth-child(3) {
+    grid-area: pesoLote;
+}   
+.grid-add-qualificacaoPeixe p:nth-child(4) {
+    grid-area: dataEntrada;
+}
+.grid-add-qualificacaoPeixe p:nth-child(5) {
+    grid-area: dataSaida;
+}
+.grid-add-qualificacaoPeixe p:nth-child(6) {
+    grid-area: peixe;
+}
+.grid-add-qualificacaoPeixe p:nth-child(7) {
+    grid-area: btnCad;
+    justify-self: center;
+}

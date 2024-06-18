@@ -1,0 +1,32 @@
+.grid-add-lembrete{
+    grid-template-areas: 
+    'tanque data'
+    'hora tipo'
+    'quantidade produto'
+    'btnCad btnCad'
+    ;
+}
+
+.grid-add-lembrete p:nth-child(1) {
+    grid-area: tanque;
+}
+.grid-add-lembrete p:nth-child(2) {
+    grid-area: data;
+}
+.grid-add-lembrete p:nth-child(3) {
+    grid-area: hora;
+}   
+.grid-add-lembrete p:nth-child(4) {
+    grid-area: tipo;
+}
+.grid-add-lembrete p:nth-child(5) {
+    grid-area: quantidade;
+}
+.grid-add-lembrete p:nth-child(6) {
+    grid-area: produto;
+}
+
+.grid-add-lembrete p:nth-child(7) {
+    grid-area: btnCad;
+    justify-self: center;
+}

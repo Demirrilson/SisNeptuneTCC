@@ -1,0 +1,10 @@
+.container-avisos{
+    display: grid;
+    grid-template-areas: 
+    'titulo filtro filtro filtro filtro'
+    'titulo conteudo conteudo conteudo conteudo'
+    'titulo conteudo conteudo conteudo conteudo'
+    'titulo conteudo conteudo conteudo conteudo'
+    'titulo conteudo conteudo conteudo conteudo'
+    ;
+}

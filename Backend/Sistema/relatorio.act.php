@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         `Teste_id`) VALUES (NULL, '$dataRelatorio', 
         '$conteudo', '$idTeste');");
 
-        header("Location: ../../Frontend/Paginas/relatorio.php");
+        header("Location: ../../Frontend/Paginas/main-relatorio.php");
 
     } else {
         echo "Por favor, preencha todos os campos.";

@@ -1,0 +1,56 @@
+.grid-add-funcionario{
+    grid-template-areas: 
+    'nome email'
+    'senha telefone'
+    'cargo salario'
+    'cep rua'
+    'bairro numero'
+    'complemento dataContra'
+    'expediente expediente'
+    'btnCad btnCad'
+    ;
+}
+
+.grid-add-funcionario p:nth-child(1) {
+    grid-area: nome;
+}
+.grid-add-funcionario p:nth-child(2) {
+    grid-area: email;
+}
+.grid-add-funcionario p:nth-child(3) {
+    grid-area: senha;
+}   
+.grid-add-funcionario p:nth-child(4) {
+    grid-area: telefone;
+}
+.grid-add-funcionario p:nth-child(5) {
+    grid-area: cargo;
+}
+.grid-add-funcionario p:nth-child(6) {
+    grid-area: salario;
+}
+.grid-add-funcionario p:nth-child(7) {
+    grid-area: cep;
+}
+.grid-add-funcionario p:nth-child(8) {
+    grid-area: rua;
+}
+.grid-add-funcionario p:nth-child(9) {
+    grid-area: bairro;
+}
+.grid-add-funcionario p:nth-child(10) {
+    grid-area: numero;
+}
+.grid-add-funcionario p:nth-child(11) {
+    grid-area: complemento;
+}
+.grid-add-funcionario p:nth-child(12) {
+    grid-area: dataContra;
+}
+.grid-add-funcionario p:nth-child(13) {
+    grid-area: expediente;
+}
+.grid-add-funcionario p:nth-child(14) {
+    grid-area: btnCad;
+    justify-self: center;
+}

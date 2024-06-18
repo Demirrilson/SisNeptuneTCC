@@ -1,0 +1,71 @@
+.grid-alt-fornecedor{
+    grid-template-areas: 
+    'nome'
+    'email'
+    'telefone'
+    'cnpj'
+    'btnCad'
+    ;
+}
+
+.grid-alt-fornecedor p:nth-child(2){
+    grid-area: nome;
+    
+}
+.grid-alt-fornecedor p:nth-child(3){
+    grid-area: email;
+}
+.grid-alt-fornecedor p:nth-child(4){
+    grid-area: telefone;
+}
+.grid-alt-fornecedor p:nth-child(5){
+    grid-area: cnpj;
+}
+.grid-alt-fornecedor p:nth-child(6){
+    grid-area: btnCad;
+    justify-self: center;
+}
+
+.grid-alt-fornecedor{
+    display: grid;
+    width: 100%;
+    gap: 25px;
+
+}
+
+.grid-alt-fornecedor p{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid-alt-fornecedor p input{
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 20px;
+    padding: 5px;
+    outline: none;
+}
+
+.grid-alt-fornecedor p select{
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 20px;
+    outline: none;
+}
+
+.grid-alt-fornecedor input[type='submit']{
+    background-color: white;
+    width: 150px;
+    font-size: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.grid-alt-fornecedor input[type='submit']:hover{
+    background-color: rgb(214, 205, 205);
+}

@@ -1,0 +1,22 @@
+.grid-add-relatorio{
+    grid-template-areas: 
+    'data'
+    'conteudo'
+    'teste'
+    'btnCad'
+    ;
+}
+
+.grid-add-relatorio p:nth-child(1) {
+    grid-area: data;
+}
+.grid-add-relatorio p:nth-child(2) {
+    grid-area: conteudo;
+}
+.grid-add-relatorio p:nth-child(3) {
+    grid-area: teste;
+}   
+.grid-add-relatorio p:nth-child(4) {
+    grid-area: btnCad;
+    justify-self: center;
+}

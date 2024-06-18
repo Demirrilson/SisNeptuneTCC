@@ -16,8 +16,8 @@ if (!empty($nome)) {
     (NULL, '$nome', '$dataValidade', '$idFornecedor', '$preco', '$tipo');");
 
 $_SESSION['resposta'] = "Cadastro realizado com sucesso!";
-    header("location:../../Frontend/Paginas/produto.php"); 
+    header("location:../../Frontend/Paginas/main-estoque.php"); 
 } else {
     $_SESSION['resposta'] = "Erro: Todos os campos são obrigatórios.";
-    header("location:../../Frontend/Paginas/produto.php");
+    header("location:../../Frontend/Paginas/add-produto.php");
 }

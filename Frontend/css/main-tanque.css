@@ -1,0 +1,120 @@
+.container-tanque {
+    /* background-color: orange; */
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+
+}
+
+.container-content {
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    gap: 30px
+}
+
+.tanque {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-tanque {
+    width: 500px;
+    min-width: 500px;
+    height: 300px;
+    background-color: rgb(103, 105, 105);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    border-radius: 12px;
+    border: 10px solid rgb(58, 58, 58);
+}
+
+
+.circulo1 {
+    background-color: white;
+    height: 200px;
+    width: 400px;
+    border-radius: 200px 200px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid #022043;
+    border-left: 5px solid #022043;
+    border-right: 5px solid #022043;
+}
+
+.circulo1 p {
+    color: black;
+    font-size: 32px;
+}
+
+.retangulo {
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 5px solid #022043;
+    border-right: 5px solid #022043;
+    gap: 5px;
+}
+
+.retangulo > label{
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: 2px;
+    background-color: grey;
+}
+
+.retangulo p {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: black;
+    font-size: 32px;
+}
+
+.circulo2 {
+    background-color: white;
+    height: 200px;
+    width: 400px;
+    border-radius: 0 0 200px 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid #022043;
+    border-left: 5px solid #022043;
+    border-right: 5px solid #022043;
+}
+
+.circulo2 p a {
+    color: black;
+    font-size: 32px;
+    
+}
+.ciruculo2 p a i{
+    scale: 1;
+    
+}
+
+.circulo2 p a i:hover{
+    scale: 1.2;
+    transition: 0.3s;
+   
+}

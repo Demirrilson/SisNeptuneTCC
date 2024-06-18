@@ -2,30 +2,24 @@
 <?php
 @session_start();
 
-
 extract($_POST);
 var_dump($_POST);
 
 require('connect.php');
 
 
-$sql = "SELECT Piscicultura_id, Nome FROM piscicultura";
+// $sql = "SELECT Piscicultura_id, Nome FROM piscicultura";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    if (isset($_POST['capacidadeVolume']) && !empty($_POST['capacidadeVolume'])) {
-        $capacidadeVolume = $_POST['capacidadeVolume'];
-
-        
-        $idPiscicultura = $_POST['idPiscicultura'];
+$query = "INSERT INTO `tanque` (`Tanque_id`, `Piscicultura_id`, `Nome`, `Tipo`, `Largura`, `Altura`, `Quantidade_peixe`, `Capacidade_volume`) VALUES (NULL, $idPiscicultura, '$nome', '$tipo', '$largura', '$altura', '$quantPeixe', '$capacidadeVolume')";
 
 
-        mysqli_query($con, "INSERT INTO `tanque` (`Tanque_id`, `Capacidade_volume`, `Piscicultura_id`) VALUES (NULL, '$capacidadeVolume', '$idPiscicultura')");
+       if(mysqli_query($con, $query)){
+            echo "deu certo";
+            header("Location: ../../Frontend/Paginas/main-tanque.php");
+       }
+       else{
+         echo "erro";
+       }
 
-        header("Location: ../../Frontend/Paginas/tanque.php");
-
-    } else {
-        echo "Por favor, preencha todos os campos.";
-    }
-}
+      
 ?>
