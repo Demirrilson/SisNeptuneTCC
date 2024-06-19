@@ -3,6 +3,8 @@ session_start();
 
 require('../Backend/Sistema/connect.php');
 
+
+
 // Função para buscar a última leitura de um tanque específico
 function get_last_reading($con, $tanque_id) {
     $query = "SELECT Valor, Data_leitura FROM leitura_sensor WHERE tipo_sensor_id = 1 AND Tanque_id = $tanque_id ORDER BY Data_leitura DESC LIMIT 1";
