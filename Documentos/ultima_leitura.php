@@ -1,28 +1,42 @@
 <?php
-// Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "neptune";
+session_start();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+require('../Backend/Sistema/connect.php');
 
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+// Função para buscar a última leitura de um tanque específico
+function get_last_reading($con, $tanque_id) {
+    $query = "SELECT Valor, Data_leitura FROM leitura_sensor WHERE tipo_sensor_id = 1 AND Tanque_id = $tanque_id ORDER BY Data_leitura DESC LIMIT 1";
+    $result = mysqli_query($con, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_assoc($result);
+    } else {
+        return null;
+    }
 }
 
-// Consulta SQL para obter a última leitura do sensor
-$sql = "SELECT valor, data_leitura FROM leitura_sensor ORDER BY data_leitura DESC LIMIT 1";
-$result = $conn->query($sql);
+$response = array();
 
-if ($result->num_rows > 0) {
-    // Saída dos dados da última leitura
-    $row = $result->fetch_assoc();
-    echo $row["valor"] . " °C em " . $row["data_leitura"];
-} else {
-    echo "Nenhuma leitura encontrada.";
+$tanques = [16, 17, 23];
+foreach ($tanques as $tanque_id) {
+    $reading = get_last_reading($con, $tanque_id);
+    if ($reading) {
+        $response[] = array(
+            'Tanque_id' => $tanque_id,
+            'Valor' => $reading['Valor'],
+            'Data_leitura' => $reading['Data_leitura']
+        );
+    } else {
+        $response[] = array(
+            'Tanque_id' => $tanque_id,
+            'error' => "Nenhuma leitura encontrada para o tanque $tanque_id."
+        );
+    }
 }
 
-$conn->close();
+// Fechar conexão
+mysqli_close($con);
+
+// Retornar resposta em formato JSON
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>

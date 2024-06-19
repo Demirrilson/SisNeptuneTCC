@@ -10,28 +10,44 @@
 </head>
 <body>
     <h1>Gráfico de Temperatura</h1>
-    <div style="width:75%;">
-        <canvas id="chart"></canvas>
+    <div style="width:100%;">
+        <canvas id="chart">
+
+        </canvas>
     </div>
     <div id="ultimaLeitura"></div>
     <script>
         // Código JavaScript para criar o gráfico e exibir a última leitura do sensor
         $(document).ready(function() {
-
-           
             // Dados do gráfico
             var ctx = document.getElementById('chart').getContext('2d');
             var chart = new Chart(ctx, {
-                type: 'line',
+                type: 'bar', // Gráfico de barras
                 data: {
                     labels: [], // Adicione as datas aqui
-                    datasets: [{
-                        label: 'Temperatura',
-                        data: [], // Adicione os valores da temperatura aqui
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
+                    datasets: [
+                        {
+                            label: 'Tanque 16',
+                            data: [ ],
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Tanque 17',
+                            data: [],
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Tanque 23',
+                            data: [],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }
+                    ]
                 },
                 options: {
                     scales: {
@@ -44,7 +60,30 @@
 
             // Exibir a última leitura do sensor
             $.get('ultima_leitura.php', function(response) {
-                $('#ultimaLeitura').html('<p>Última Leitura: ' + response + '</p>');
+                var ultimaLeituraHtml = '';
+                response.forEach(function(reading) {
+                    if (reading.error) {
+                        ultimaLeituraHtml += '<p>' + reading.error + '</p>';
+                    } else {
+                        chart.data.labels.push(reading.Data_leitura);
+                        var datasetIndex;
+                        switch (reading.Tanque_id) {
+                            case 16:
+                                datasetIndex = 0;
+                                break;
+                            case 17:
+                                datasetIndex = 1;
+                                break;
+                            case 23:
+                                datasetIndex = 2;
+                                break;
+                        }
+                        chart.data.datasets[datasetIndex].data.push(reading.Valor);
+                        ultimaLeituraHtml += '<p>Tanque ' + reading.Tanque_id + ': Valor = ' + reading.Valor + ', Data = ' + reading.Data_leitura + '</p>';
+                    }
+                });
+                $('#ultimaLeitura').html(ultimaLeituraHtml);
+                chart.update();
             });
         });
     </script>
